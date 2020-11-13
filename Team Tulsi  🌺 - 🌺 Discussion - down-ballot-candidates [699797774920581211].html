@@ -1,0 +1,3015 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Team Tulsi  &#127802; - down-ballot-candidates</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        /* General */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    max-width: 100%;
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    width: fit-content;
+}
+
+.spoiler--hidden {
+    cursor: pointer;
+}
+
+.spoiler-text {
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-text {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler--hidden .spoiler-text::selection {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-image {
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.spoiler--hidden .spoiler-image img {
+    filter: blur(44px);
+}
+
+.spoiler--hidden .spoiler-image:after {
+    content: "SPOILER";
+    color: #dcddde;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+}
+
+.spoiler--hidden:hover .spoiler-image:after {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.quote {
+    margin: 0.1em 0;
+    padding-left: 0.6em;
+    border-left: 4px solid;
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 0.25em;
+    padding: 0.5em;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.mention {
+    border-radius: 3px;
+    padding: 0 2px;
+    color: #7289da;
+    background: rgba(114, 137, 218, .1);
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.06em;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1em;
+    height: 1em;
+}
+
+.emoji--large {
+    width: 2.8em;
+    height: 2.8em;
+}
+
+/* Preamble */
+
+.preamble {
+    display: grid;
+    margin: 0 0.3em 0.6em 0.3em;
+    max-width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.preamble__guild-icon-container {
+    grid-column: 1;
+}
+
+.preamble__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.preamble__entries-container {
+    grid-column: 2;
+    margin-left: 0.6em;
+}
+
+.preamble__entry {
+    font-size: 1.4em;
+}
+
+.preamble__entry--small {
+    font-size: 1em;
+}
+
+/* Chatlog */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: grid;
+    margin: 0 0.6em;
+    padding: 0.9em 0;
+    border-top: 1px solid;
+    grid-template-columns: auto 1fr;
+}
+
+.chatlog__author-avatar-container {
+    grid-column: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    grid-column: 2;
+    margin-left: 1.2em;
+    min-width: 50%;
+}
+
+.chatlog__author-name {
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 0.3em;
+    font-size: 0.75em;
+}
+
+.chatlog__message {
+    padding: 0.1em 0.3em;
+    margin: 0 -0.3em;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 0.15em;
+    font-size: 0.8em;
+}
+
+.chatlog__attachment {
+    margin-top: 0.3em;
+}
+
+.chatlog__attachment-thumbnail {
+    vertical-align: top;
+    max-width: 45vw;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    margin-top: 0.3em;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 0.25em;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.6em;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    display: flex;
+    width: 100%;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    margin-bottom: 0.3em;
+    align-items: center;
+}
+
+.chatlog__embed-author-icon {
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 0.2em;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 0.6em;
+    font-size: 0.875em;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 1.2em;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 0.2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 0.35em 0.1em 0.1em 0.1em;
+    padding: 0.2em 0.35em;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 0.35em;
+    font-size: 0.875em;
+}
+
+.chatlog__bot-tag {
+    position: relative;
+    top: -.2em;
+    margin-left: 0.3em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    font-weight: 500;
+}
+
+/* Postamble */
+
+.postamble {
+    margin: 1.4em 0.3em 0.6em 0.3em;
+    padding: 1em;
+    border-top: 1px solid;
+}
+    </style>
+    <style>
+        /* General */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler-text {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.spoiler--hidden .spoiler-text {
+    background-color: #202225;
+}
+
+.spoiler--hidden:hover .spoiler-text {
+    background-color: rgba(32, 34, 37, 0.8);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #b9bbbe !important;
+}
+
+/* === Preamble === */
+
+.preamble__entry {
+    color: #ffffff;
+}
+
+/* Chatlog */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-color-pill--default {
+    background-color: rgba(79, 84, 92, 1);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Postamble */
+
+.postamble {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.postamble__entry {
+    color: #ffffff;
+}
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler--hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/533862326483419146/021fdd6b2a7c779e27fd933b6630bd0d.png" alt="Guild icon">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">Team Tulsi  &#127802;</div>
+        <div class="preamble__entry">&#127802; Discussion / down-ballot-candidates</div>
+
+            <div class="preamble__entry preamble__entry--small">Put down ballot candidates from the state and federal level who are running in 2020 and have their election this year and have good policies</div>
+
+    </div>
+</div>
+
+<div class="chatlog">
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">14-Apr-20 09:47 PM</span>
+
+            <div class="chatlog__message chatlog__message--pinned" data-message-id="699798066110136501" id="message-699798066110136501">
+                <div class="chatlog__content">
+                    <div class="markdown">Put down ballot candidates from the state and federal level who are running in 2020 and have their election this year and have good policies </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="voteup" title="voteup" src="https://cdn.discordapp.com/emojis/619390272639598593.png">
+                                <span class="chatlog__reaction-count">6</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="699798079125323827" id="message-699798079125323827">
+                <div class="chatlog__content">
+                    <div class="markdown">Pinned a message. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">14-Apr-20 11:35 PM</span>
+
+            <div class="chatlog__message " data-message-id="699825156545314836" id="message-699825156545314836">
+                <div class="chatlog__content">
+                    <div class="markdown">Jen Perelman (FL-23, Running against Debbie Wasserman Schultz)
+<a href="https://twitter.com/jenfl23/status/1237845752337948675?s=21">https://twitter.com/jenfl23/status/1237845752337948675?s=21</a> <span class="chatlog__edited-timestamp" title="15-Apr-20 09:19 PM">(edited)</span></div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1152568512482828289/0UMaSOns_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/JENFL23">Jen Perelman For Congress (@JENFL23)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">We are running a <img class="emoji " alt="💯" title="💯" src="https://twemoji.maxcdn.com/2/72x72/1f4af.png"> grassroots funded, people powered campaign for Congress against Debbie Wasserman Schultz!
+
+If you like our launch video, please chip in $23 for FL-23 here: <a href="https://t.co/BUGwrZXr30">https://t.co/BUGwrZXr30</a> 
+
+#NotMeUs #JEN2020 #NextJen #JenX #JENCorps <a href="https://t.co/9MPAd7FSMM">https://t.co/9MPAd7FSMM</a></div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Retweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">299</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">836</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://pbs.twimg.com/ext_tw_video_thumb/1237845181086326786/pu/img/TARs54LFExMiBggh.jpg">
+                                            <img class="chatlog__embed-thumbnail" src="https://pbs.twimg.com/ext_tw_video_thumb/1237845181086326786/pu/img/TARs54LFExMiBggh.jpg" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="voteup" title="voteup" src="https://cdn.discordapp.com/emojis/619390272639598593.png">
+                                <span class="chatlog__reaction-count">5</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">15-Apr-20 09:14 PM</span>
+
+            <div class="chatlog__message " data-message-id="700152026398458057" id="message-700152026398458057">
+                <div class="chatlog__content">
+                    <div class="markdown">Shahid Buttar (running against Pelosi in CA-12)
+<a href="https://twitter.com/ShahidForChange/status/1240424376815640578?s=19">https://twitter.com/ShahidForChange/status/1240424376815640578?s=19</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1236328116471005185/gA085s71_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/ShahidForChange">&#127801;Shahid Buttar for Congress (@ShahidForChange)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">I’m grateful to have emerged from our CA-12 jungle primary as Pelosi’s first general election challenger from within the Democratic Party in her 30 year career—which I have every intention of ending on behalf of We the #PeopleVsPelosi. <a href="https://t.co/m3yozGRpS0">https://t.co/m3yozGRpS0</a></div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Retweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">2396</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">8665</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="700152317743464468" id="message-700152317743464468">
+                <div class="chatlog__content">
+                    <div class="markdown">Joshua Collins (WA-10)
+<a href="https://www.joshua2020.com/">https://www.joshua2020.com/</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://www.joshua2020.com/">
+                                                    <div class="markdown">Home | Joshua Collins for Congress | Washington | Socialist</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Joshua Collins, 26, is a Socialist trucker running for Congress in Washington&#39;s 10th Congressional District! Tweet @Joshua4Congress</div>
+                                        </div>
+
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://static.wixstatic.com/media/91b6cc_3a68c8f760434280a3590aa75be0de98%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/91b6cc_3a68c8f760434280a3590aa75be0de98%7Emv2.jpg">
+                                            <img class="chatlog__embed-thumbnail" src="https://static.wixstatic.com/media/91b6cc_3a68c8f760434280a3590aa75be0de98%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/91b6cc_3a68c8f760434280a3590aa75be0de98%7Emv2.jpg" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">16-Apr-20 04:14 PM</span>
+
+            <div class="chatlog__message " data-message-id="700438880427573338" id="message-700438880427573338">
+                <div class="chatlog__content">
+                    <div class="markdown">Lauren Ashcraft (NY-12) </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700438882759475341" id="message-700438882759475341">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://twitter.com/VoteAshcraft/status/1242475503166128128">https://twitter.com/VoteAshcraft/status/1242475503166128128</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1217586721069699072/NKbpflnd_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/VoteAshcraft">Lauren Ashcraft for NY-12&#127801; (@VoteAshcraft)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">We CAN and SHOULD have:
+✅#MedicareForAll
+✅#GreenNewDeal
+✅#AbolishStudentDebt
+✅#COVID19Relief
+✅#JobsGuarantee
+✅#HomesGuarantee
+✅#SmallBusinessRelief
+✅#DebtFreeze
+
+Everyone, please watch &amp; RT this video to learn how we will pay for it!  #LearnMMT #MMT #COVID19 #PeopleFirst http...</div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Retweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">371</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">787</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://pbs.twimg.com/ext_tw_video_thumb/1242474394116591616/pu/img/FLqAQ5iwRlTPPmei.jpg">
+                                            <img class="chatlog__embed-thumbnail" src="https://pbs.twimg.com/ext_tw_video_thumb/1242474394116591616/pu/img/FLqAQ5iwRlTPPmei.jpg" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">18-Apr-20 11:57 PM</span>
+
+            <div class="chatlog__message " data-message-id="701280322540797983" id="message-701280322540797983">
+                <div class="chatlog__content">
+                    <div class="markdown">Kara Eastman (NE-02)
+<a href="https://twitter.com/karaforcongress?s=20">https://twitter.com/karaforcongress?s=20</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://twitter.com/karaforcongress?s=20">
+                                                    <div class="markdown">Kara Eastman (@karaforcongress)</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">I&#39;m a Democrat running against a Trump Republican in #NE02 #Eastman2020 Donate: <a href="https://secure.actblue.com/donate/jd-kara-eastman">https://secure.actblue.com/donate/jd-kara-eastman</a></div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Tweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">6354</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Followers</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">12248</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://pbs.twimg.com/profile_images/897499452361101313/B406mUGz_normal.jpg">
+                                            <img class="chatlog__embed-thumbnail" src="https://pbs.twimg.com/profile_images/897499452361101313/B406mUGz_normal.jpg" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="701280475389493270" id="message-701280475389493270">
+                <div class="chatlog__content">
+                    <div class="markdown">Nabilah Islam (GA-07)
+<a href="https://twitter.com/NabilahforGA07/status/1240634644514684931">https://twitter.com/NabilahforGA07/status/1240634644514684931</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1223275816504778757/CS1wXY0a_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/NabilahforGA07">Nabilah Islam for Congress (@NabilahforGA07)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">We need a Congress full of people who understand exactly what poor and working people are going through right now. Retweet and follow this account to join our campaign and if you can, during these difficult times, chip in here:<a href="https://t.co/OZSE5HZ5wy">https://t.co/OZSE5HZ5wy</a></div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Retweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">117</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">332</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">20-Apr-20 11:26 AM</span>
+
+            <div class="chatlog__message " data-message-id="701816150249570464" id="message-701816150249570464">
+                <div class="chatlog__content">
+                    <div class="markdown">Mckayla Wilkes (MD-05, running against Pelosi&#39;s no 2 guy Steny Hoyer)
+<a href="https://twitter.com/MeetMckayla/status/1252245712026378241">https://twitter.com/MeetMckayla/status/1252245712026378241</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1223304317559562240/6SG9IUoV_bigger.png" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/MeetMckayla">Mckayla Wilkes for Congress (@MeetMckayla)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">I&#39;m running for Congress against the #2 ranking Democrat in the House, @LeaderHoyer, who said that marijuana should stay illegal because it&#39;s a &quot;gateway drug&quot; less than a year ago.
+
+Help us win!
+<a href="https://t.co/5i1Jpv12xA">https://t.co/5i1Jpv12xA</a></div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">153</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">27-Apr-20 10:26 PM</span>
+
+            <div class="chatlog__message " data-message-id="704518759888584795" id="message-704518759888584795">
+                <div class="chatlog__content">
+                    <div class="markdown">Jason Call (WA-02)
+<a href="https://twitter.com/CallForCongress/status/1232433845338664960">https://twitter.com/CallForCongress/status/1232433845338664960</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1225328995966697472/tDrjkY5b_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/CallForCongress">Jason Call for Congress WA02 &#127801; (@CallForCongress)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Our campaign is endorsed by @OurRevolution &amp; @DSASnoCo. We fight for the working class &amp; the #NotMeUs agenda.
+
+We reject the corporate PACs that fund our lobbyist opponent. Help us win this seat for working people with a contribution of 5, 10, or 27 bucks.
+<a href="https://t.co/0LVupy">https://t.co/0LVupy</a>...</div>
+                                        </div>
+
+                                </div>
+
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">12-May-20 09:59 PM</span>
+
+            <div class="chatlog__message " data-message-id="709947892554792971" id="message-709947892554792971">
+                <div class="chatlog__content">
+                    <div class="markdown">Kara Eastman (NB-02) who is a progressive wins her primary. Will go on to run against a Republican incumbent who she lost by 2 points by in 2018 </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="voteup" title="voteup" src="https://cdn.discordapp.com/emojis/619390272639598593.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="709947903883608085" id="message-709947903883608085">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://twitter.com/grace_panetta/status/1260377746909388801?s=19">https://twitter.com/grace_panetta/status/1260377746909388801?s=19</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1222272765903937539/L8CL1VMW_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/grace_panetta">Grace Panetta (@grace_panetta)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">NEW: Kara Eastman has defeated Ann Ashford in the Democratic primary for #NE02, a top target for Democrats to win this year both in the House and the electoral college  <a href="https://t.co/mjE3heNfmD">https://t.co/mjE3heNfmD</a></div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">270</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">13-May-20 08:39 PM</span>
+
+            <div class="chatlog__message " data-message-id="710290209488764939" id="message-710290209488764939">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://www.businessinsider.com/joshua-collins-joshua4congress-deleted-his-twitter-and-instagram-accounts-2020-5">https://www.businessinsider.com/joshua-collins-joshua4congress-deleted-his-twitter-and-instagram-accounts-2020-5</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,255,255,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://www.businessinsider.com/joshua-collins-joshua4congress-deleted-his-twitter-and-instagram-accounts-2020-5">
+                                                    <div class="markdown">The 26-year-old socialist trucker campaigning for the title of youn...</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Collins&#39; political and communications director said on Twitter that Collins, who has autism, needed to leave social media so that he could sleep.</div>
+                                        </div>
+
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://i.insider.com/5ebc4ed542278d141d0dee85?width=1200&amp;format=jpeg">
+                                            <img class="chatlog__embed-thumbnail" src="https://i.insider.com/5ebc4ed542278d141d0dee85?width=1200&amp;format=jpeg" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="710290664927133807" id="message-710290664927133807">
+                <div class="chatlog__content">
+                    <div class="markdown">Seems a little suspicious. I understand the need to escape social media but if you’re a serious candidate you need an account. Why not just turn the account over to someone else to manage? </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="voteup" title="voteup" src="https://cdn.discordapp.com/emojis/619390272639598593.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">13-May-20 09:02 PM</span>
+
+            <div class="chatlog__message " data-message-id="710295917760348220" id="message-710295917760348220">
+                <div class="chatlog__content">
+                    <div class="markdown">Yea ik </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">19-May-20 03:14 PM</span>
+
+            <div class="chatlog__message " data-message-id="712382707757482051" id="message-712382707757482051">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://youtu.be/Wsul3AmJVak">https://youtu.be/Wsul3AmJVak</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,0,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://www.youtube.com/channel/UCoJTOwZxbvq8Al8Qat2zgTA">Kim Iversen</a>
+                                                </span>
+                                        </div>
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://www.youtube.com/watch?v=Wsul3AmJVak">
+                                                    <div class="markdown">OUSTING Debbie Wasserman Schultz! How Jen Perelman Is Going To Do It.</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Please Subscribe to this channel and hit the bell! 
+
+Support Jen Perelman&#39;s quest to oust Debbie Wasserman Schultz
+www.jen2020.com
+Twitter @Jenfl23 
+FB Jen2020
+Instagram jenforcongress2020
+
+Support the show by becoming a premium member: <a href="https://www.patreon.com/kimiversen">https://www.patreon.com/kimiversen</a>
+
+...</div>
+                                        </div>
+
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://i.ytimg.com/vi/Wsul3AmJVak/maxresdefault.jpg">
+                                            <img class="chatlog__embed-thumbnail" src="https://i.ytimg.com/vi/Wsul3AmJVak/maxresdefault.jpg" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127486;" title="&#127486;" src="https://twemoji.maxcdn.com/2/72x72/1f1fe.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127466;" title="&#127466;" src="https://twemoji.maxcdn.com/2/72x72/1f1ea.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127480;" title="&#127480;" src="https://twemoji.maxcdn.com/2/72x72/1f1f8.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="liteshaka" title="liteshaka" src="https://cdn.discordapp.com/emojis/687150572138135642.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">23-May-20 11:11 PM</span>
+
+            <div class="chatlog__message " data-message-id="713952330491494481" id="message-713952330491494481">
+                <div class="chatlog__content">
+                    <div class="markdown">Marianne endorses many many downballot progressives
+<a href="https://twitter.com/marwilliamson/status/1264241817123319809">https://twitter.com/marwilliamson/status/1264241817123319809</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/859507720814305281/nTvKAGL6_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/marwilliamson">Marianne Williamson (@marwilliamson)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Here is the newly updated endorsement list...</div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Retweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">319</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">1910</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                            </div>
+
+                                <div class="chatlog__embed-image-container">
+                                    <a class="chatlog__embed-image-link" href="https://pbs.twimg.com/media/EYt9OmeU0AAism7.jpg:large">
+                                        <img class="chatlog__embed-image" src="https://pbs.twimg.com/media/EYt9OmeU0AAism7.jpg:large" alt="Image">
+                                    </a>
+                                </div>
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="voteup" title="voteup" src="https://cdn.discordapp.com/emojis/619390272639598593.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">23-May-20 11:52 PM</span>
+
+            <div class="chatlog__message " data-message-id="713962693119443034" id="message-713962693119443034">
+                <div class="chatlog__content">
+                    <div class="markdown">I love what Marianne is doing. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">28-May-20 06:26 AM</span>
+
+            <div class="chatlog__message " data-message-id="715511234824503308" id="message-715511234824503308">
+                <div class="chatlog__content">
+                    <div class="markdown"> </div>
+                </div>
+
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/699797774920581211/715511231632506901/image0.jpg">
+                                    <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/699797774920581211/715511231632506901/image0.jpg" alt="Attachment">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">03-Jun-20 09:34 PM</span>
+
+            <div class="chatlog__message " data-message-id="717914040818466827" id="message-717914040818466827">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://twitter.com/AOC/status/1268346992385765376?s=19">https://twitter.com/AOC/status/1268346992385765376?s=19</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/923274881197895680/AbHcStkl_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/AOC">Alexandria Ocasio-Cortez (@AOC)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">This moment requires renewed and revitalized leadership across the country AND at the ballot box.
+
+On June 23rd, New York will be holding primary elections.
+
+Tomorrow I will be rolling out a slate of New York endorsements.
+
+Tonight, I am endorsing @JamaalBowmanNY for Congress...</div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Retweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">630</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">3062</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                            </div>
+
+                                <div class="chatlog__embed-image-container">
+                                    <a class="chatlog__embed-image-link" href="https://pbs.twimg.com/media/EZoS3d9WkAIUnSH.jpg:large">
+                                        <img class="chatlog__embed-image" src="https://pbs.twimg.com/media/EZoS3d9WkAIUnSH.jpg:large" alt="Image">
+                                    </a>
+                                </div>
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">17-Aug-20 05:09 PM</span>
+
+            <div class="chatlog__message " data-message-id="745026441191751761" id="message-745026441191751761">
+                <div class="chatlog__content">
+                    <div class="markdown">Tmrw - Florida Primaries </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="745026486238576670" id="message-745026486238576670">
+                <div class="chatlog__content">
+                    <div class="markdown">Sept 1st - Massachusetts Prinaries </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">18-Aug-20 03:12 PM</span>
+
+            <div class="chatlog__message " data-message-id="745359567143043114" id="message-745359567143043114">
+                <div class="chatlog__content">
+                    <div class="markdown">Ed Markey (MA-Sen) 
+<a href="https://twitter.com/EdMarkey/status/1293986122318610435">https://twitter.com/EdMarkey/status/1293986122318610435</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1250801228172480514/j92KZ9rm_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/EdMarkey">Ed Markey (@EdMarkey)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">When the government abandons its people, it’s up to us to rise up and make a revolution. We’re fighting for dignity, for justice, and for our future. Join us at <a href="https://t.co/NY8pZcBcFE">https://t.co/NY8pZcBcFE</a>. #GreenNewDealmaker <a href="https://t.co/4V558XjrVw">https://t.co/4V558XjrVw</a></div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Retweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">17933</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">61725</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://pbs.twimg.com/media/EfUYQwEWkAAdq8C.jpg">
+                                            <img class="chatlog__embed-thumbnail" src="https://pbs.twimg.com/media/EfUYQwEWkAAdq8C.jpg" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="745359700354138172" id="message-745359700354138172">
+                <div class="chatlog__content">
+                    <div class="markdown">Alex Morse (MA-01)
+<a href="https://twitter.com/AlexBMorse/status/1295512828460359680">https://twitter.com/AlexBMorse/status/1295512828460359680</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1271803626269429761/aqs1ZPnk_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/AlexBMorse">Alex Morse (@AlexBMorse)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Sorry about the dropped livestream. 
+
+If MA-01 had broadband and local media was properly funded, it probably wouldn&#39;t have happened. 
+
+This is now a single digit race — and we need your help to win. 
+
+Sign up and chip in: <a href="https://t.co/zC3tkJ7qSi">https://t.co/zC3tkJ7qSi</a></div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Retweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">210</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">1039</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                            </div>
+
+                                <div class="chatlog__embed-image-container">
+                                    <a class="chatlog__embed-image-link" href="https://pbs.twimg.com/card_img/1293836605904609280/CmRejpKe?format=jpg&amp;name=600x314">
+                                        <img class="chatlog__embed-image" src="https://pbs.twimg.com/card_img/1293836605904609280/CmRejpKe?format=jpg&amp;name=600x314" alt="Image">
+                                    </a>
+                                </div>
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">21-Aug-20 12:32 AM</span>
+
+            <div class="chatlog__message " data-message-id="746225188105879642" id="message-746225188105879642">
+                <div class="chatlog__content">
+                    <div class="markdown">Pelosi endorsed Joe Kennedy III against Ed Markey
+<a href="https://twitter.com/pkcapitol/status/1296576930368520192">https://twitter.com/pkcapitol/status/1296576930368520192</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1099019903837917184/sizYxZ_m_bigger.png" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/pkcapitol">Paul Kane (@pkcapitol)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Updated Mass Senate story: Pelosi tells @ktumulty that Markey crossed hallowed Democratic ground with his attack on Kennedy clan, prompting her endorsement of JKIII. 
+
+<a href="https://t.co/h4Pho9FA62">https://t.co/h4Pho9FA62</a></div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Retweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">289</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">829</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                            </div>
+
+                                <div class="chatlog__embed-image-container">
+                                    <a class="chatlog__embed-image-link" href="https://pbs.twimg.com/card_img/1296519180628430849/IZWN2vkm?format=jpg&amp;name=600x314">
+                                        <img class="chatlog__embed-image" src="https://pbs.twimg.com/card_img/1296519180628430849/IZWN2vkm?format=jpg&amp;name=600x314" alt="Image">
+                                    </a>
+                                </div>
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/469235387634810891/d77a51a4cf7a2b52e1670047a8bcd938.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="chibi riyun#6596" data-user-id="469235387634810891" style="color: rgb(113,54,138)">chibi riyun</span>
+
+
+        <span class="chatlog__timestamp">27-Aug-20 02:43 PM</span>
+
+            <div class="chatlog__message " data-message-id="748613743143026798" id="message-748613743143026798">
+                <div class="chatlog__content">
+                    <div class="markdown">Former USAF who was threatened with discharge after questioning &#39;why are we in Lybia?&#39;
+Anti-war, anti-war on drugs, anti-establishment.
+Pro-term limits, pro-immigration reform
+Black son of immigrants living in Patterson NJ going against a 30+ yr incumbent. 
+For those who don&#39;t know, Patterson is one  of those cities on a single-digit list that, if they were ignored from the stats, would move US from top 20 in gun violence to bottom 10.
+Tulsi supporters, more than any other group (still calling themselves Democrat party), should be the ones with an open enough mind to get past the sentence structure of &quot;Make [noun] Great Again&quot; to form coalitions and make the world a better place. 
+Here is a 20min intro clip
+<a href="https://youtu.be/vTxeHZtbXHo">https://youtu.be/vTxeHZtbXHo</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,0,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://www.youtube.com/channel/UCLwNTXWEjVd2qIHLcXxQWxA">Timcast IRL</a>
+                                                </span>
+                                        </div>
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://www.youtube.com/watch?v=vTxeHZtbXHo">
+                                                    <div class="markdown">Obama Voter Explains Why He SWITCHED To The Republicans And Is Runn...</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Tim gives guest Billy Prempeh, congressional district candidate in New Jersey and young Republican, the center stage to tell his story of his travels from Obama fan to staunch, energetic Republican. 
+
+Guest: Billy Prempeh, NJ-9 congressional district candidate
+Twitter: @BillyP...</div>
+                                        </div>
+
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://i.ytimg.com/vi/vTxeHZtbXHo/sddefault.jpg">
+                                            <img class="chatlog__embed-thumbnail" src="https://i.ytimg.com/vi/vTxeHZtbXHo/sddefault.jpg" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="748613845634777291" id="message-748613845634777291">
+                <div class="chatlog__content">
+                    <div class="markdown">Full podcast and campaign website
+<a href="https://youtu.be/rXZFfg1wI_g">https://youtu.be/rXZFfg1wI_g</a>
+<a href="https://billy2020nj.com/">https://billy2020nj.com/</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(255,0,0,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://www.youtube.com/channel/UCLwNTXWEjVd2qIHLcXxQWxA">Timcast IRL</a>
+                                                </span>
+                                        </div>
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://www.youtube.com/watch?v=rXZFfg1wI_g">
+                                                    <div class="markdown">Timcast IRL -  National Guard Deployed In Kenosha Over BLM Riots, R...</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Merch - <a href="https://teespring.com/stores/timcast-2">https://teespring.com/stores/timcast-2</a>
+
+Podcast available on iTunes and Spotify, coming soon to all podcast platforms!</div>
+                                        </div>
+
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://i.ytimg.com/vi/rXZFfg1wI_g/maxresdefault.jpg">
+                                            <img class="chatlog__embed-thumbnail" src="https://i.ytimg.com/vi/rXZFfg1wI_g/maxresdefault.jpg" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://billy2020nj.com/author/billyprempeh/">BillyPrempeh</a>
+                                                </span>
+                                        </div>
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://billy2020nj.com/">
+                                                    <div class="markdown">HOME</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Meet Billy
+NJ 9th Congressional District Candidate 
+Get to know more about Billy Prempeh On a personal level. READ MORE      
+Meet Billy
+NJ 9th Congressional District Candidate Get to know</div>
+                                        </div>
+
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://billy2020nj.com/wp-content/uploads/2020/02/LOGO.png">
+                                            <img class="chatlog__embed-thumbnail" src="https://billy2020nj.com/wp-content/uploads/2020/02/LOGO.png" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">01-Sep-20 10:33 PM</span>
+
+            <div class="chatlog__message " data-message-id="750543927794466906" id="message-750543927794466906">
+                <div class="chatlog__content">
+                    <div class="markdown">Ed Markey won, Alex Morse lost </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/697650733792624672/a3b8c07e17f30eb11da93c9c9de8b434.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="hyey#1471" data-user-id="697650733792624672" style="color: rgb(173,20,87)">hyey</span>
+
+
+        <span class="chatlog__timestamp">03-Oct-20 05:21 PM</span>
+
+            <div class="chatlog__message " data-message-id="762061691160231987" id="message-762061691160231987">
+                <div class="chatlog__content">
+                    <div class="markdown"> </div>
+                </div>
+
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/699797774920581211/762061688904089650/IMG_20201003_132452_822.jpg">
+                                    <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/699797774920581211/762061688904089650/IMG_20201003_132452_822.jpg" alt="Attachment">
+                            </a>
+                    </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="762061735934558218" id="message-762061735934558218">
+                <div class="chatlog__content">
+                    <div class="markdown">Tonight, at 8pm - It’s on!
+
+Tune in statewide at the below stations, nationally on C-SPAN, or stream via WIS TV!
+
+WATCH LIVE: WIS TV (Columbia), WMBF News (Myrtle Beach), Live 5 News (Charleston), WYFF News 4 (Greenville), News 12 NBC 26 (Augusta, GA) </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">03-Oct-20 05:23 PM</span>
+
+            <div class="chatlog__message " data-message-id="762062179032629258" id="message-762062179032629258">
+                <div class="chatlog__content">
+                    <div class="markdown">Hope Jamie does well! </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/697650733792624672/a3b8c07e17f30eb11da93c9c9de8b434.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="hyey#1471" data-user-id="697650733792624672" style="color: rgb(173,20,87)">hyey</span>
+
+
+        <span class="chatlog__timestamp">03-Oct-20 05:23 PM</span>
+
+            <div class="chatlog__message " data-message-id="762062322159452172" id="message-762062322159452172">
+                <div class="chatlog__content">
+                    <div class="markdown">He definitely is I&#39;m putting out is signs now </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">03-Oct-20 06:08 PM</span>
+
+            <div class="chatlog__message " data-message-id="762073525963325491" id="message-762073525963325491">
+                <div class="chatlog__content">
+                    <div class="markdown">I didn’t realize you were in SC! Best of luck! <img class="emoji " alt="🤞" title="🤞" src="https://twemoji.maxcdn.com/2/72x72/1f91e.png"> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/697650733792624672/a3b8c07e17f30eb11da93c9c9de8b434.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="hyey#1471" data-user-id="697650733792624672" style="color: rgb(173,20,87)">hyey</span>
+
+
+        <span class="chatlog__timestamp">03-Oct-20 06:28 PM</span>
+
+            <div class="chatlog__message " data-message-id="762078705174052885" id="message-762078705174052885">
+                <div class="chatlog__content">
+                    <div class="markdown">Thanks! </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">04-Oct-20 08:58 AM</span>
+
+            <div class="chatlog__message " data-message-id="762297693765894145" id="message-762297693765894145">
+                <div class="chatlog__content">
+                    <div class="markdown"> </div>
+                </div>
+
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/699797774920581211/762297690196410389/image0.jpg">
+                                    <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/699797774920581211/762297690196410389/image0.jpg" alt="Attachment">
+                            </a>
+                    </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="762298017863827486" id="message-762298017863827486">
+                <div class="chatlog__content">
+                    <div class="markdown">This is awesome. Biden should do this at the next debate. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/531783961286934529/e5166de32feaa6a09fa263a03c4effba.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Eee#4869" data-user-id="531783961286934529" style="color: rgb(113,54,138)">Eee</span>
+
+
+        <span class="chatlog__timestamp">13-Oct-20 08:26 PM</span>
+
+            <div class="chatlog__message " data-message-id="765732211789135882" id="message-765732211789135882">
+                <div class="chatlog__content">
+                    <div class="markdown">I heard Issac Wilson made it past the primary.  Does anyone want to help him in the general?  I don&#39;t think too many people helped him during the primary. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-20 07:16 PM</span>
+
+            <div class="chatlog__message " data-message-id="767526490350288906" id="message-767526490350288906">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://mobile.twitter.com/Christinefor24">https://mobile.twitter.com/Christinefor24</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://twitter.com/Christinefor24">
+                                                    <div class="markdown">Christine Olivo For Congress (@Christinefor24)</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Working class mom running for congress in FL-24. I’m an advocate for UBI, M4A, a $15 minimum wage and much more! ✊<img class="emoji " alt="🏽" title="🏽" src="https://twemoji.maxcdn.com/2/72x72/1f3fd.png"> Elect me Nov 3</div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Tweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">3360</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Followers</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">5977</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://pbs.twimg.com/profile_images/1303137792692805632/XI9er_wX_normal.jpg">
+                                            <img class="chatlog__embed-thumbnail" src="https://pbs.twimg.com/profile_images/1303137792692805632/XI9er_wX_normal.jpg" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="767527001417449527" id="message-767527001417449527">
+                <div class="chatlog__content">
+                    <div class="markdown">This candidate seems great. UBI, Medicare for All and supports freeing Assange! </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="767527030358147142" id="message-767527030358147142">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://twitter.com/Christinefor24/status/1317904595247636483">https://twitter.com/Christinefor24/status/1317904595247636483</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1303137792692805632/XI9er_wX_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/Christinefor24">Christine Olivo For Congress (@Christinefor24)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">If I was in congress right now, I would vote yes on the legislation introduced by @TulsiGabbard which would drop all charges against Julian Assange.
+
+#FreeAssange</div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">197</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+
+                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/196392166032015360/50e84c4c384e188d23a76829e4917bda.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Hawaii#4228" data-user-id="196392166032015360" style="color: rgb(57,151,253)">Hawaii</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-20 09:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="767565118145691689" id="message-767565118145691689">
+                <div class="chatlog__content">
+                    <div class="markdown">I love Christine. Been following her on Twitter for a while. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-20 09:55 PM</span>
+
+            <div class="chatlog__message " data-message-id="767566620414705695" id="message-767566620414705695">
+                <div class="chatlog__content">
+                    <div class="markdown">She seems awesome. I wish she was running in my district so I could vote for her! </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/196392166032015360/50e84c4c384e188d23a76829e4917bda.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Hawaii#4228" data-user-id="196392166032015360" style="color: rgb(57,151,253)">Hawaii</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-20 11:16 PM</span>
+
+            <div class="chatlog__message " data-message-id="767586901313454110" id="message-767586901313454110">
+                <div class="chatlog__content">
+                    <div class="markdown">It’s also pretty cool that she’s a non party affiliate. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">18-Oct-20 11:35 PM</span>
+
+            <div class="chatlog__message " data-message-id="767591762029445190" id="message-767591762029445190">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Hawaii#4228">@Hawaii</span> That makes it less likely for her to win tho </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/196392166032015360/50e84c4c384e188d23a76829e4917bda.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Hawaii#4228" data-user-id="196392166032015360" style="color: rgb(57,151,253)">Hawaii</span>
+
+
+        <span class="chatlog__timestamp">19-Oct-20 12:22 AM</span>
+
+            <div class="chatlog__message " data-message-id="767603636691796008" id="message-767603636691796008">
+                <div class="chatlog__content">
+                    <div class="markdown">Yeah but still pretty cool. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/697650733792624672/a3b8c07e17f30eb11da93c9c9de8b434.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="hyey#1471" data-user-id="697650733792624672" style="color: rgb(173,20,87)">hyey</span>
+
+
+        <span class="chatlog__timestamp">20-Oct-20 10:32 PM</span>
+
+            <div class="chatlog__message " data-message-id="768300660579893269" id="message-768300660579893269">
+                <div class="chatlog__content">
+                    <div class="markdown"> </div>
+                </div>
+
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/699797774920581211/768300654002962462/FINAL_ClevelandforCongress_30secSpot_1.mp4">
+Attachment: FINAL_ClevelandforCongress_30secSpot_1.mp4 (36.24 MB)                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/697650733792624672/a3b8c07e17f30eb11da93c9c9de8b434.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="hyey#1471" data-user-id="697650733792624672" style="color: rgb(173,20,87)">hyey</span>
+
+
+        <span class="chatlog__timestamp">04-Nov-20 11:02 PM</span>
+
+            <div class="chatlog__message " data-message-id="773759182377320460" id="message-773759182377320460">
+                <div class="chatlog__content">
+                    <div class="markdown"> </div>
+                </div>
+
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/699797774920581211/773759177897934878/FB_IMG_1604548832885.jpg">
+                                    <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/699797774920581211/773759177897934878/FB_IMG_1604548832885.jpg" alt="Attachment">
+                            </a>
+                    </div>
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/699797774920581211/773759178288267274/FB_IMG_1604529596058.jpg">
+                                    <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/699797774920581211/773759178288267274/FB_IMG_1604529596058.jpg" alt="Attachment">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">04-Nov-20 11:11 PM</span>
+
+            <div class="chatlog__message " data-message-id="773761375566692353" id="message-773761375566692353">
+                <div class="chatlog__content">
+                    <div class="markdown">I’m glad Tulsi’s dad won! But I wish he ran for Tulsi’s seat in Congress instead. </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/697650733792624672/a3b8c07e17f30eb11da93c9c9de8b434.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="hyey#1471" data-user-id="697650733792624672" style="color: rgb(173,20,87)">hyey</span>
+
+
+        <span class="chatlog__timestamp">05-Nov-20 09:45 AM</span>
+
+            <div class="chatlog__message " data-message-id="773920948641595442" id="message-773920948641595442">
+                <div class="chatlog__content">
+                    <div class="markdown">Who won her seat anyways </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/193078724080435201/6c35367434ce76532198ce0aa8ccd9f7.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="acurrie254#3627" data-user-id="193078724080435201" style="color: rgb(57,151,253)">#FreeAssange</span>
+
+
+        <span class="chatlog__timestamp">05-Nov-20 09:51 AM</span>
+
+            <div class="chatlog__message " data-message-id="773922493912055878" id="message-773922493912055878">
+                <div class="chatlog__content">
+                    <div class="markdown">Kai Kahele <span class="mention" title="hyey#1471">@hyey</span> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">08-Nov-20 09:21 PM</span>
+
+            <div class="chatlog__message " data-message-id="775183347516702760" id="message-775183347516702760">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://twitter.com/AndrewYang/status/1324809476940189698">https://twitter.com/AndrewYang/status/1324809476940189698</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(29,161,242,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+                                                <img class="chatlog__embed-author-icon" src="https://pbs.twimg.com/profile_images/1320018636224999425/q8MpOLDP_bigger.jpg" alt="Author icon">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://twitter.com/AndrewYang">Andrew Yang&#129506;&#127482;&#127480; (@AndrewYang)</a>
+                                                </span>
+                                        </div>
+
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">The best thing we could do for Joe is to get him a Democratic Senate. There should be coordination of resources. Everyone who campaigned for Joe should get ready to head to Georgia. I’ll go. It’s the only way to sideline Mitch and give Joe a unified government.</div>
+                                        </div>
+
+                                        <div class="chatlog__embed-fields">
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Retweets</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">32106</div>
+                                                        </div>
+                                                </div>
+                                                <div class="chatlog__embed-field chatlog__embed-field--inline">
+                                                        <div class="chatlog__embed-field-name">
+                                                            <div class="markdown">Likes</div>
+                                                        </div>
+
+                                                        <div class="chatlog__embed-field-value">
+                                                            <div class="markdown">209295</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+
+                            </div>
+
+
+                                <div class="chatlog__embed-footer">
+                                        <img class="chatlog__embed-footer-icon" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Footer icon">
+
+                                        <span class="chatlog__embed-footer-text">
+Twitter
+ • 
+06-Nov-20 03:22 PM                                        </span>
+                                </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="775183679843467294" id="message-775183679843467294">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="hyey#1471">@hyey</span> How far are you from GA? </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/697650733792624672/a3b8c07e17f30eb11da93c9c9de8b434.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="hyey#1471" data-user-id="697650733792624672" style="color: rgb(173,20,87)">hyey</span>
+
+
+        <span class="chatlog__timestamp">08-Nov-20 09:23 PM</span>
+
+            <div class="chatlog__message " data-message-id="775183882927734835" id="message-775183882927734835">
+                <div class="chatlog__content">
+                    <div class="markdown">~45 mins from the nearest city </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="775183968646725664" id="message-775183968646725664">
+                <div class="chatlog__content">
+                    <div class="markdown">~2hrs from Atlanta </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="775184224013516820" id="message-775184224013516820">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="tulsi2020#5451">@Jack Skellington</span> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">08-Nov-20 09:29 PM</span>
+
+            <div class="chatlog__message " data-message-id="775185366062727218" id="message-775185366062727218">
+                <div class="chatlog__content">
+                    <div class="markdown">I was just looking on his website but don’t see any events listed. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">08-Nov-20 09:37 PM</span>
+
+            <div class="chatlog__message " data-message-id="775187260178038796" id="message-775187260178038796">
+                <div class="chatlog__content">
+                    <div class="markdown">If anyone here is interested in getting a Dem Senate majority, please consider volunteering for Jon Ossoff. You don’t even have to live in Georgia as there are phone banking opportunities that can be done from anywhere. <span class="chatlog__edited-timestamp" title="08-Nov-20 09:37 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="775187278023884871" id="message-775187278023884871">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://electjon.com/">https://electjon.com/</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://electjon.com/author/benapolloartistry-com/">Apollo</a>
+                                                </span>
+                                        </div>
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://electjon.com/">
+                                                    <div class="markdown">Jon Ossoff for U.S. Senate</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Electing Jon Ossoff is Democrats&#39; best chance to Flip the Senate Blue. Chip in to send Jon to the Senate.</div>
+                                        </div>
+
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://electjon.com/wp-content/uploads/2020/05/share.png">
+                                            <img class="chatlog__embed-thumbnail" src="https://electjon.com/wp-content/uploads/2020/05/share.png" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/539647980479840268/7c4113ee38d5212591fac89dda49ae12.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="tulsi2020#5451" data-user-id="539647980479840268" style="color: rgb(57,151,253)">Jack Skellington</span>
+
+
+        <span class="chatlog__timestamp">10-Nov-20 08:06 PM</span>
+
+            <div class="chatlog__message " data-message-id="775889127291486238" id="message-775889127291486238">
+                <div class="chatlog__content">
+                    <div class="markdown">Also I didn’t mean to leave out the other debate candidate, the Rev. Raphael Warnock. <a href="https://warnockforgeorgia.com/take-action/">https://warnockforgeorgia.com/take-action/</a> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+                                        <div class="chatlog__embed-author">
+
+                                                <span class="chatlog__embed-author-name">
+                                                        <a class="chatlog__embed-author-name-link" href="https://warnockforgeorgia.com/author/createapolloartistry-com/">Builder</a>
+                                                </span>
+                                        </div>
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://warnockforgeorgia.com/take-action/">
+                                                    <div class="markdown">Take Action - Warnock for Georgia</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Reverend Raphael Warnock grew up in Kayton Homes public housing in ... Warnock will bring to Washington the concerns of struggling Georgia families who ...</div>
+                                        </div>
+
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://yebhjcoyoh-flywheel.netdna-ssl.com/wp-content/uploads/2020/09/aashare.png">
+                                            <img class="chatlog__embed-thumbnail" src="https://yebhjcoyoh-flywheel.netdna-ssl.com/wp-content/uploads/2020/09/aashare.png" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="775889263761162290" id="message-775889263761162290">
+                <div class="chatlog__content">
+                    <div class="markdown">It looks like he has more remote volunteer opportunities available, including texting. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 61 message(s)</div>
+</div>
+
+</body>
+</html>
